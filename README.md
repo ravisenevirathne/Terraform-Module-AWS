@@ -40,7 +40,7 @@ You can either code or explain how the following could be accomplished:
 
 =====================================================================================================
 
-**Deployment Process**
+Deployment Process
 
 1. First setup AWS environments variables relating to the AWS account which provide authentication for terraform to execute 
     $ export AWS_ACCESS_KEY_ID= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
@@ -136,10 +136,5 @@ EOT
 public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDELilmKjq2eSkBv71KwcME4rSfV7pjOUM0vfpqUUKux0LYbsBGzj2BmmWnUEgLfqS0dFlHyumGqaBQoQnoTzw3/7sQh8QG7rqo21Jd4/7oVxD9DzGZr8LpeplzR1DUfG01C7baP2wlxWRuWznsXxrDLhZp87pqdpZH8jEFOTxHhMJWBesb53LtnsnFknuB8zJvXyjnc38p+WDkgH+7R4ysBr9n7G3l+78555ANkAKO0llV088ca3tN8kmuJZBIkzy0492A0LaKqCt6FJAWs8e7Dzw0UU0MfDVsddj3sjEMf55g+cHXC/j2b8wV2JcatvF5Ug0jHoqCj5GKSK4OiGTv"
 
 5. Following AWS resources has been created
-
-                    ![image](https://user-images.githubusercontent.com/85973309/142784842-fc571392-cfe1-47ad-a739-10ac3c83336a.png)
-
-                    
-                    ![image](https://user-images.githubusercontent.com/85973309/142784882-8d9c5cca-a40c-4dd0-8a59-c76892d38b3e.png)
 
 
