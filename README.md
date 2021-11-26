@@ -102,10 +102,10 @@ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAsxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 Jenkins has been installed on EC2 instance to test CICD deployment of Terraform code. Jenkins and Terraform have been installed on Ubuntu 18.0.4 EC2 VM. AmazonEC2FullAccess IAM role has been created and added to this VM, so it will have correct access level to execute Terraform code.
 
-image
+![image](https://user-images.githubusercontent.com/85973309/143563725-7b93e3ee-807f-4a4f-a5f6-718754f283a0.png)
 
 Following stages have been added to Jenkins pipeline
-
+```
 pipeline {
     agent any
 
@@ -141,11 +141,13 @@ pipeline {
     }
    
 }
+```
 Result of successful execution of the pipeline
 
-image
+![image](https://user-images.githubusercontent.com/85973309/143563783-e4daf533-6a29-4468-8bf2-13a3fca87969.png)
 
-image image
+![image](https://user-images.githubusercontent.com/85973309/143563842-de79108a-1cdf-46af-a0ea-3b7e02fd517d.png)
+
 
 Jenkins post build actions have been created. so success or failure of the pipeline can be identified and actioned.
 
