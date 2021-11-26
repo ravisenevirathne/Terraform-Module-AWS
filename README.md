@@ -98,3 +98,54 @@ public_key = "ssh-rsa AAAAB3NzaC1yc2EAAAsxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ![image](https://user-images.githubusercontent.com/85973309/142786073-461d6a26-663a-423a-b95e-83080cd898e8.png)
 
 
+
+
+Jenkins has been installed on EC2 instance to test CICD deployment of Terraform code. Jenkins and Terraform have been installed on Ubuntu 18.0.4 EC2 VM. AmazonEC2FullAccess IAM role has been created and added to this VM, so it will have correct access level to execute Terraform code.
+
+image
+
+Following stages have been added to Jenkins pipeline
+
+pipeline {
+    agent any
+
+    stages {
+        stage('Git checkout') {
+            steps {
+               checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'ad0eb06a-b18a-4e27-9528-200b8647fad7', url: 'https://github.com/ravisenevirathne/AWS-Terraform-Technical-Test-2-']]])
+            }
+        }
+        
+        stage ('Terraform init') {
+            steps {
+                sh ('terraform init');
+            }
+        }    
+            
+        stage ('Terraform Action') {
+            steps {
+                echo "terraform action from the parameter is --> ${action}"
+                sh ("terraform ${action} --auto-approve");
+            } 
+        }
+        
+    }
+    
+    post {
+        failure {
+            echo "Pipeline is failed"
+        }
+        success {
+            echo "Pipeline is succeeded"
+        }
+    }
+   
+}
+Result of successful execution of the pipeline
+
+image
+
+image image
+
+Jenkins post build actions have been created. so success or failure of the pipeline can be identified and actioned.
+
